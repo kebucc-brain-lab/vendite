@@ -1,0 +1,52 @@
+# .gitignore del brain (Brain Builder v3.1). Generato da nuovo_brain.py.
+
+# --- segreti e configurazioni locali: mai nel repo, mai nel RAG ---
+.env
+.env.*
+!.env.example
+.secrets/
+.mcp.json
+CLAUDE.local.md
+.claude/settings.local.json
+# .codex/ NON e' ignorata: hooks.json appartiene al brain. config.toml puo' contenere trust e segreti.
+.codex/config.toml
+
+# --- memoria automatica (autoMemoryDirectory) e ambienti locali ---
+.memory/
+# dream (v3.2): le proposte citano frasi delle sessioni, i backup sono copie della memoria: mai nel repo
+# (`**/` serve: con uno slash interno la regola sarebbe ancorata alla radice e non coprirebbe i nodi)
+**/workspace/dream/
+.memory-backup/
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+node_modules/
+.tmp/
+
+# --- indice RAG: artefatti per-macchina, tranne gli stati condivisi (content-hash per file) ---
+scripts/rag/index/*
+!scripts/rag/index/*_state.json
+!scripts/rag/index/state/
+scripts/rag/qdrant_db/
+scripts/rag/qdrant_server_storage/
+qdrant-storage/
+qdrant_storage/
+
+# --- derivati rigenerabili e stato locale di Obsidian ---
+_showcase/
+.obsidian/workspace*.json
+
+# --- file LOCALI di questa macchina (path assoluti): li rigenera scaffold/inizializza_clone.py
+#     su ogni macchina che clona il brain; mai nel repo (SPEC v3.2 par. 12 G1) ---
+/.template-manifest.json
+/brain.yaml
+*.code-workspace
+CLAUDE.md
+AGENTS.md
+/.env.example
+**/.claude/settings.json
+**/.claude/skills/
+**/.agents/skills/
+**/.codex/hooks.json

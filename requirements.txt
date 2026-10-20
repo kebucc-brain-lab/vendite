@@ -1,0 +1,8 @@
+# Motore del brain (Brain Builder v3.1). Versioni PROVATE: sono quelle del venv di VMR Brain
+# (Python 3.13.6, Windows) con cui il motore e' stato collaudato. Installa SEMPRE nel venv del
+# brain:  .venv\Scripts\python.exe -m pip install -r scripts\requirements.txt
+fastembed==0.8.0
+qdrant-client==1.18.0
+PyYAML==6.0.3
+python-dotenv==1.2.2
+numpy==2.5.1

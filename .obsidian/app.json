@@ -1,0 +1,9 @@
+{
+  "userIgnoreFilters": [
+    ".memory/",
+    ".secrets/",
+    ".venv/",
+    "scripts/",
+    "_showcase/"
+  ]
+}

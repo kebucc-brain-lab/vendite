@@ -1,0 +1,4 @@
+{"question": "Qual e' l'offerta principale e quanto costa?", "expected_files": ["offerta-principale"], "should_refuse": false}
+{"question": "Chi e' il referente del cliente Rossi e da quando e' cliente?", "expected_files": ["cliente-rossi"], "should_refuse": false}
+{"question": "Quali sono i KPI target del trimestre?", "expected_files": ["kpi-target-trimestre"], "should_refuse": false}
+{"question": "Qual e' il fatturato del concorrente Bianchi nel 2019?", "expected_files": [], "should_refuse": true}

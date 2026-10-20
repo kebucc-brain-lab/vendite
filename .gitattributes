@@ -1,0 +1,5 @@
+# Fine riga LF per tutti i file di testo del brain (gli script e i template sono scritti con LF).
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.pdf binary

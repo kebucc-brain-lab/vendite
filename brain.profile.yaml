@@ -1,0 +1,32 @@
+# brain.profile.yaml - profilo del vault letto dal motore (kb_config.load_profile).
+# `folders` = cartelle COMPILATE (allow-list di lint, llms.txt, ingest) con il summary del loro _index.md;
+# `raw_dirs` = zone grezze mai lintate (solo workspace/journal/sessions entra nel RAG); `ops_dirs` = cartelle
+# operative osservate dalla sentinella feed; `corpus_roots` = radici del corpus grezzo; `contains` = kind dei
+# nodi figli ammessi. Generato da nuovo_brain.py / nuovo_nodo.py dallo stampo tipi/<kind>/profile.yaml.
+kind: company
+profile: full
+label: "Azienda"
+folders:
+  - name: self
+    summary: "Identita' dell'azienda: missione, ICP, offerta, prezzi, posizionamento, voce, obiettivi, storia."
+  - name: areas
+    summary: "Responsabilita' continue che non finiscono mai."
+  - name: projects
+    summary: "Lavoro a tempo, con un traguardo; quando finisce, status: archived."
+  - name: concepts
+    summary: "Idee atomiche, una idea per nota."
+  - name: docs
+    summary: "SOP, playbook, runbook, procedure multi-sezione tenute intere."
+  - name: entities
+    summary: "Schede di nomi propri: persone, clienti, strumenti, piattaforme, competitor."
+  - name: data
+    summary: "Dataset strutturati: numeri su cui l'agente calcola, una nota canonica per metrica."
+  - name: code
+    summary: "Script, skill, automazioni che l'azienda possiede, come schede-nota."
+  - name: outputs
+    summary: "Deliverable finiti riusabili come modello e come prova."
+raw_dirs: [sources, workspace]
+ops_dirs: [ops]
+corpus_roots: [sources/corpus]
+skills_extra: []
+contains: []

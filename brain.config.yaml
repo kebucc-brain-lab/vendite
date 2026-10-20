@@ -1,0 +1,34 @@
+# brain.config.yaml - copia PORTABILE (Brain Builder v3.2): le chiavi della macchina (root, python,
+# memory_dir, guard, federation.registry) sono vuote; scaffold/inizializza_clone.py le rimette sulla
+# macchina che clona il brain e rigenera i file locali (settings, skill, manifest, CLAUDE.md, brain.yaml).
+config_version: 1
+brain_id: vendite
+name: Offerte, listini e clienti dell'area vendite
+mode: federated
+kind: company
+root: ''
+master_root: ''
+template_version: 3.2.0-rc1
+agents:
+- claude
+- codex
+git:
+  init: true
+  remote: ''
+  branch: main
+python: ''
+qdrant:
+  collection: vendite_brain
+guard:
+  home: ''
+  protected_roots: []
+github:
+  mode: org
+  owner: kebucc-brain-lab
+  repo: vendite
+  visibility: public
+  role: area
+  codeowners:
+  - path: '*'
+    teams:
+    - direzione

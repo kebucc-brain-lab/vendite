@@ -1,0 +1,5 @@
+# CODEOWNERS del brain vendite (https://github.com/kebucc-brain-lab/vendite) - generato dal Brain Builder da org.yaml.
+# Zona -> team responsabili (devono avere almeno Write sul repo e non essere team secret).
+# Con il ruleset `main-protetto` la review di un code owner e' obbligatoria su ogni PR verso main.
+# Si modifica solo con una PR; i team si cambiano in org.yaml e si riallineano con github_org.py apply.
+* @kebucc-brain-lab/direzione

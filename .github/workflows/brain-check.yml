@@ -1,0 +1,26 @@
+# brain-check - controllo del brain su ogni PR e su ogni push a main (Brain Builder v3.2).
+# Il nome del job (`brain-check`) e' il check obbligatorio del ruleset `main-protetto`: non rinominarlo.
+# Stessi controlli di brain_sync: lint del vault (front matter, link, orfani) e controllo applicativo dei file
+# tracciati (niente .env/.secrets tranne .env.example, niente estensioni pesanti o file > 10 MB, niente segreti).
+name: brain-check
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  brain-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Dipendenze (solo PyYAML)
+        run: python -m pip install --disable-pip-version-check --quiet "PyYAML==6.0.3"
+      - name: Lint del vault
+        run: python scripts/lint_kb.py --root .
+      - name: File vietati, pesanti o con segreti
+        run: python scripts/repo_check.py --root . --tracked

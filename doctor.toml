@@ -1,0 +1,15 @@
+# doctor.toml - parametri dei controlli NON critici di scripts/doctor.py per il brain vendite.
+# I controlli critici (identita', antenati, settings, guardia, memoria, manifest, segnaposto)
+# non si configurano: valgono sempre.
+
+[cli]
+expected_version = ""          # es. "2.1.302"; vuoto = non verificare la versione di `claude`
+
+[plugins]
+dangerous = ["tokensaver"]     # plugin che, se attivi, il doctor segnala
+
+[rag]
+extra_env = []                 # nomi di variabili d'ambiente che devono esistere (mai i valori)
+
+[codex]
+require_trust = false          # true = FAIL (non critico) se il progetto non e' fidato in ~/.codex/config.toml
